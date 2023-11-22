@@ -31,4 +31,7 @@ Run the web server from IDE or terminal with:
 rails s
 ```
 
+## Database scheme
+![Database scheme](https://github.com/rburdukovskii/ITProg/blob/master/database%20schema.png)
+
 ## Features
