@@ -1,0 +1,8 @@
+<ul>
+  <%- @users.each do |user| %>
+    <li>
+      <%= "#{user.name} created a post #{user.posts[0].title}
+            with comment: #{user.posts[0].comments[0].body}" %>
+    </li>
+  <% end %>
+</ul>
