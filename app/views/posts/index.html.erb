@@ -1,0 +1,16 @@
+<h1 class="text-4xl font-extra bold">Посты</h1>
+
+<% @posts.each do |post| %>
+  <h2><%= post.title %></h2>
+  <time datetime="<%= post.formatted_created_at %>">
+    <%= post.formatted_created_at %>
+  </time>
+
+  <p>
+    <%= post.body %>
+    <br>
+    <%= link_to "Смотреть", post_path(post) %>
+    <%= link_to "Редактировать", edit_post_path(post) %>
+    <%= link_to "Удалить", post_path(post), data: {turbo_method: :delete, turbo_confirm: 'Вы уверены?'}  %>
+  </p>
+<% end %>

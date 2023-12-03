@@ -1,0 +1,13 @@
+<%= form_with model: @post do |f| %>
+  <div>
+    <%= f.label "Название статьи" %>
+    <%= f.text_field :title, required: true, placeholder: 'Введите название' %>
+  </div>
+
+  <div>
+    <%= f.label "Текст статьи" %>
+    <%= f.text_area :body, required: true, placeholder: 'Введите текст' %>
+  </div>
+
+  <%= f.submit "Сохранить" %>
+<% end %>

@@ -9,7 +9,7 @@
 #   end
 
 unless User.any?
-  user = User.create(name: 'Bob', email: 'bob@example.com', password: '12345')
+  user = User.create(name: 'Bob', email: 'bob@example.com', password_digest: '12345')
   post = user.posts.create(title: 'Test_title', body: 'test_body')
   post.comments.create(body: "Works!", user_id: user.id)
   user.save
