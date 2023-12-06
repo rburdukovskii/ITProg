@@ -1,43 +1,23 @@
-<%= form_with model: @user do |f| %>
-  <div class="mb-3 row">
-    <div class="col-sm-2 col-form-label">
-      <%= f.label :email %>
-    </div>
+<%= form_with model: @user, class: "max-w-sm mx-auto" do |f| %>
 
-    <div class="col-sm-10">
-      <%= f.email_field :email, placeholder: 'E-mail', class: 'form-control form-control-lg' %>
+    <div class="mb-5">
+      <%= f.label "Your name", class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+      <%= f.text_field :name, class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light", placeholder: "username" %>
     </div>
-  </div>
-
-  <div class="mb-3 row">
-    <div class="col-sm-2 col-form-label">
-      <%= f.label "Имя пользователя" %>
+    <div class="mb-5">
+      <%= f.label "Your email", class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+      <%= f.email_field :email, class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light", placeholder: "name@flowbite.com" %>
     </div>
-
-    <div class="col-sm-10">
-      <%= f.text_field :name, placeholder: 'Name', class: 'form-control form-control-lg' %>
+    <div class="mb-5">
+      <%= f.label "Your password", class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+      <%= f.password_field :password, class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" %>
     </div>
-  </div>
-
-  <div class="mb-3 row">
-    <div class="col-sm-2 col-form-label">
-      <%= f.label "Пароль" %>
+    <div class="mb-5">
+      <%= f.label "Repeat password", class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+      <%= f.password_field :password_confirmation, class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" %>
     </div>
+    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+      <%= f.submit "Register new account" %>
+    </button>
 
-    <div class="col-sm-10">
-      <%= f.password_field :password, class: 'form-control form-control-lg' %>
-    </div>
-  </div>
-
-  <div class="mb-3 row">
-    <div class="col-sm-2 col-form-label">
-      <%= f.label "Подтверждение пароля" %>
-    </div>
-
-    <div class="col-sm-10">
-      <%= f.password_field :password_confirmation, class: 'form-control form-control-lg' %>
-    </div>
-  </div>
-
-  <%= f.submit "Зарегистрироваться", class: 'btn btn-primary btn-lg' %>
 <% end %>
