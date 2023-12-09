@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   def new
-
   end
 
   def create
@@ -10,8 +9,8 @@ class SessionsController < ApplicationController
       flash[:success] = "Welcome back, #{current_user.name}!"
       redirect_to root_path
     else
-      flash.now[:warning] = "Incorrect email and/or password!"
-      render :new
+      flash[:error] = "Incorrect email and/or password!"
+      redirect_to new_session_path
     end
   end
 

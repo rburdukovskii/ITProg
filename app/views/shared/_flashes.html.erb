@@ -1,0 +1,19 @@
+<% flash.each do |type, msg| %>
+  <% if flash[:success] %>
+    <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4">
+      <p class="font-bold"> Success </p>
+      <p> <%= msg %> </p>
+    </div>
+  <% end %>
+
+  <% if flash[:error] %>
+    <div>
+      <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
+        Danger
+      </div>
+      <div class="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
+        <p> <%= msg %> </p>
+      </div>
+    </div>
+  <% end %>
+<% end %>
